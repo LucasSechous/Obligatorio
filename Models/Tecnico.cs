@@ -5,10 +5,8 @@ using System.Web;
 
 namespace Obligatorio.Models
 {
-    public class Ordenes
+    public class Tecnico:Usuario
     {
-
-        private int NroOrden;
-        private Cliente Cliente;
+        
     }
 }
