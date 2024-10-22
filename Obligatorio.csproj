@@ -209,7 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseDeDatos.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Ordenes.cs" />
     <Compile Include="Models\Tecnico.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -237,6 +239,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Browsers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
