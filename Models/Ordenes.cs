@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.DateTime;
 
 namespace Obligatorio.Models
 {
@@ -10,5 +11,9 @@ namespace Obligatorio.Models
 
         private int NroOrden;
         private Cliente Cliente;
+        private Tecnico Tecnico;
+        private DateTime Fecha;
+
+
     }
 }
