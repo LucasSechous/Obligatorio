@@ -7,9 +7,9 @@ namespace Obligatorio.Models
 {
     public class Cliente : Usuario
     {
-        private string Direccion;
-        private string Telefono;
-        private string Email;
+
+        public string Direccion { get; set; }
+        public string 
 
         public Cliente(string nombre, string apellido, uint ci, string direccion, string telefono, string email) : base(nombre, apellido, ci)
         {
