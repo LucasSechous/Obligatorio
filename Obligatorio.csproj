@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ClientesWeb.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -192,6 +193,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ClientesWeb.aspx.cs">
+      <DependentUpon>ClientesWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientesWeb.aspx.designer.cs">
+      <DependentUpon>ClientesWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,7 +217,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseDeDatos.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Ordenes.cs" />
     <Compile Include="Models\Tecnico.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -237,6 +247,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Browsers\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
