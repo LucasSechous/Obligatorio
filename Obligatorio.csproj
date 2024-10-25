@@ -178,6 +178,9 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Styles\styles.css" />
+    <Content Include="Styles\stylesCatalogo.css" />
+    <Content Include="Styles\stylesSobre.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -221,6 +224,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Ordenes.cs" />
+    <Compile Include="Models\PrecargaBD.cs" />
     <Compile Include="Models\Tecnico.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

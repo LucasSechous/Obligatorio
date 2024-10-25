@@ -15,9 +15,10 @@
         <asp:Label ID="Label6" runat="server" Text="Email: "></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox> <br /><br />
         
-        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" />
+        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" Width="151px" OnClick="cmdCrear" />
         <br />
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+        <asp:GridView ID="TablaClientes" runat="server"></asp:GridView>
+         <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
 
 
 

@@ -8,9 +8,10 @@ namespace Obligatorio.Models
     public class Usuario
     {
 
-        private string Nombre;
-        private string Apellido;
-        private uint CI;
+      public string Nombre {  get; set; }
+      public string Apellido { get; set; }
+      public uint CI { get; set; }
+
 
         public Usuario(string Nombre, string Apellido, uint ci)
         {

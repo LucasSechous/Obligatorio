@@ -9,7 +9,8 @@ namespace Obligatorio.Models
     {
 
         public string Direccion { get; set; }
-        public string 
+        public string Telefono { get; set; }
+        public string Email { get; set; }
 
         public Cliente(string nombre, string apellido, uint ci, string direccion, string telefono, string email) : base(nombre, apellido, ci)
         {
@@ -35,17 +36,17 @@ namespace Obligatorio.Models
 
         public void setDireccion(string direccion)
         {
-            this.Direccion= direccion;
+            this.Direccion = direccion;
         }
 
         public void setTelefono(string telefono)
         {
-            this.Telefono= telefono;
+            this.Telefono = telefono;
         }
 
         public void setEmail(string email)
         {
-            this.Email= email;
+            this.Email = email;
         }
 
     }
