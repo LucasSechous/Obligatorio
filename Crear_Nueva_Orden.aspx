@@ -12,24 +12,22 @@
         <div>
 
             <asp:Label ID="lblNombreCliente" runat="server" Text="Nombre del Cliente: "></asp:Label>
-            <asp:TextBox ID="txtNombreCliente" runat="server"/>
->           
+            <asp:TextBox ID="txtNombreCliente" runat="server" />
+        </div>
+        <div>
             <asp:Label ID="lblTipoServicio" runat="server" Text="Servicio Deseado: "></asp:Label>
+
             <%-- Hacer un dropdown --%>
-            <asp:DropDownList ID="tipo_Servicio" runat="server"> 
+            <asp:DropDownList ID="ddlTipoServicio" runat="server">
                 <asp:ListItem runat="server" Enabled="true" Text="Seleccione un Servicio" Value="-1"></asp:ListItem>
                 <asp:ListItem Value="Montaje">Montaje</asp:ListItem>
                 <asp:ListItem Value="Sistemas">Sistemas</asp:ListItem>
                 <asp:ListItem Value="Reparacion">Reparacion</asp:ListItem>
-
-
             </asp:DropDownList>
-
-
-
-
-
-
+        </div>
+        <div>
+            <asp:Calendar runat="server" ID="calendario"></asp:Calendar>
+            &nbsp;
         </div>
     </form>
 </body>

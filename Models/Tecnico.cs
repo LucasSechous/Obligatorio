@@ -7,9 +7,9 @@ namespace Obligatorio.Models
 {
     public class Tecnico : Usuario
     {
-        private string Especialidad;
+        public string Especialidad;
 
-        public Tecnico(string Nombre, string Apellido, uint ci, string especialidad): base(Nombre, Apellido, ci)
+        public Tecnico(string Nombre, string Apellido, string ci, string especialidad): base(Nombre, Apellido, ci)
         {
             this.Especialidad = especialidad;
         }

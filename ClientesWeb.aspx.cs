@@ -12,51 +12,70 @@ namespace Obligatorio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (!IsPostBack)
             {
-                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                TablaClientes.DataBind();
-                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                
+                if (BaseDeDatos.ListaClientes.Count == 0) // Solo precarga si la lista está vacía
+                {
+                    BaseDeDatos.PrecargarBD();
+                }
+
+                CargarClientesEnTabla();
 
             }
+        }
+        private void CargarClientesEnTabla()
+        {
+            TablaClientes.DataSource = BaseDeDatos.ListaClientes;
+            TablaClientes.DataBind();
         }
 
         protected void cmdCrear(object sender, EventArgs e)
         {
 
-            var a = txtNombre.Text;
-            var b = txtApellido.Text;
-            var c = Convert.ToUInt32(txtCI.Text);
-            var d = txtDireccion.Text;
-            var ea = txtTelefono.Text;
-            var f = txtEmail.Text;
+            if (string.IsNullOrEmpty(txtEmail.Text) && string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                
+                lblError.Text = "Debes agregar un metodo de contacto";
+                lblError.Visible = true;
 
-            Cliente miCliente = new Cliente(a,b,c,d,ea,f);
+            }
+            else
+            {
+                var a = txtNombre.Text;
+                var b = txtApellido.Text;
+                var c = txtCI.Text;
+                var d = txtDireccion.Text;
+                var ea = txtTelefono.Text;
+                var f = txtEmail.Text;
 
-            miCliente.Nombre = a;
-            miCliente.Apellido = b;
-            miCliente.CI = c;
-            miCliente.Direccion = d;
-            miCliente.Telefono = ea;
-            miCliente.Email = f;
-            lblError.Text = "Cliente creado correctamente";
+                Cliente miCliente = new Cliente(a, b, c, d, ea, f);
 
-            BaseDeDatos.ListaClientes.Add(miCliente);
+                miCliente.Nombre = a;
+                miCliente.Apellido = b;
+                miCliente.CI = c;
+                miCliente.Direccion = d;
+                miCliente.Telefono = ea;
+                miCliente.Email = f;
+                lblCreadoCorrectamente.Visible = true;
+                lblCreadoCorrectamente.Text = "Cliente creado correctamente";
 
-            
-
-            TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-            TablaClientes.DataBind();
-
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtCI.Text = "";
-            txtDireccion.Text = "";
-            txtEmail.Text = "";
-            txtTelefono.Text = "";
+                BaseDeDatos.ListaClientes.Add(miCliente);
 
 
+                
+                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
+                TablaClientes.DataBind();
+
+                txtNombre.Text = "";
+                txtApellido.Text = "";
+                txtCI.Text = "";
+                txtDireccion.Text = "";
+                txtEmail.Text = "";
+                txtTelefono.Text = "";
+
+            }
         }
     }
 }
