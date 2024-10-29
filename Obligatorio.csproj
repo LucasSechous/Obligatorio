@@ -119,6 +119,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Crear_Nueva_Orden.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -181,6 +182,7 @@
     <Content Include="Styles\styles.css" />
     <Content Include="Styles\stylesCatalogo.css" />
     <Content Include="Styles\stylesSobre.css" />
+    <Content Include="TecnicosWeb.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -210,6 +212,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Crear_Nueva_Orden.aspx.cs">
+      <DependentUpon>Crear_Nueva_Orden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Crear_Nueva_Orden.aspx.designer.cs">
+      <DependentUpon>Crear_Nueva_Orden.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,9 +231,9 @@
     </Compile>
     <Compile Include="Models\BaseDeDatos.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Enum_Tecnicos.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Ordenes.cs" />
-    <Compile Include="Models\PrecargaBD.cs" />
     <Compile Include="Models\Tecnico.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,6 +250,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicosWeb.aspx.cs">
+      <DependentUpon>TecnicosWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicosWeb.aspx.designer.cs">
+      <DependentUpon>TecnicosWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
