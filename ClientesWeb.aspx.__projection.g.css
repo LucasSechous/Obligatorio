@@ -1,0 +1,22 @@
+
+/* BEGIN EXTERNAL SOURCE */
+
+        .label-custom {
+            display: inline-block; /* Para que todos tengan el mismo tamaño */
+            width: 100px; /* Ancho fijo */
+            margin-top: 10px; /* Espaciado superior reducido */
+            margin-right: 10px; /* Espaciado a la derecha */
+            text-align: right; /* Alineación del texto a la derecha */
+        }
+
+        .text-box {
+            margin-top: 10px; /* Espaciado superior para los TextBox */
+        }
+
+        .titulo {
+            width: 100px; /* Establece un ancho fijo */
+            text-align: right; /* Alineación del texto */
+            font-size: 25px;
+        }
+    
+/* END EXTERNAL SOURCE */

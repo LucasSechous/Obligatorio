@@ -3,9 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <asp:h1 ID="titulo" Class="titulo">Creacion de Clientes</asp:h1>
+        <h1 class="titulo">Creacion de Clientes</h1>
         <br />
-
+        
         <asp:Label ID="Label" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
         <asp:TextBox ID="txtNombre" runat="server" CssClass="text-box"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
@@ -40,6 +40,17 @@
         <br />
         <br />
         <asp:GridView ID="TablaClientes" runat="server"></asp:GridView>
+
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+    <Columns>
+        
+        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+        <asp:BoundField DataField="`Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+        <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
+    </Columns>
+</asp:GridView>
         <br />
         <asp:Label ID="lblCreadoCorrectamente" runat="server" Visible="false" ForeColor="Green"></asp:Label>
     </main>

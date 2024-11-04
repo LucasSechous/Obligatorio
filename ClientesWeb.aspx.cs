@@ -68,14 +68,21 @@ namespace Obligatorio
                 TablaClientes.DataSource = BaseDeDatos.ListaClientes;
                 TablaClientes.DataBind();
 
-                txtNombre.Text = "";
-                txtApellido.Text = "";
-                txtCI.Text = "";
-                txtDireccion.Text = "";
-                txtEmail.Text = "";
-                txtTelefono.Text = "";
-
+                LimpiarCampos();
             }
+
+            
+
+
+        }
+        private void LimpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtCI.Text = "";
+            txtDireccion.Text = "";
+            txtTelefono.Text = "";
+            txtEmail.Text = "";
         }
     }
 }

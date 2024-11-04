@@ -14,6 +14,7 @@ namespace Obligatorio.Models
 
         public Cliente(string nombre, string apellido, string ci, string direccion, string telefono, string email) : base(nombre, apellido, ci)
         {
+           
             this.Direccion = direccion;
             this.Telefono = telefono;
             this.Email = email;

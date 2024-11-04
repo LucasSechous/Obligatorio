@@ -9,32 +9,39 @@
 
             <asp:h1 ID="titulo" Class="titulo">Creacion de Tecnicos</asp:h1>
             <br />
+            <div>
+                <asp:Label ID="lblNombre" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
+                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
 
-            <asp:Label ID="lblNombre" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
-            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
-            <br />
+            </div>
 
-            <asp:Label ID="lblApellido" runat="server" Text="Apellido: " CssClass="label-custom"></asp:Label>
-            <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" ID="rfvApellido" ControlToValidate="txtApellido" ForeColor="Red" Text="El Apellido es requerido"></asp:RequiredFieldValidator>
-            <br />
+            <div>
+                <asp:Label ID="lblApellido" runat="server" Text="Apellido: " CssClass="label-custom"></asp:Label>
+                <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="rfvApellido" ControlToValidate="txtApellido" ForeColor="Red" Text="El Apellido es requerido"></asp:RequiredFieldValidator>
+            </div>
 
-            <asp:Label ID="lblCI" runat="server" Text="CI: " CssClass="label-custom"></asp:Label>
-            <asp:TextBox ID="txtCI" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" ID="rfcCI" ControlToValidate="txtCI" ForeColor="Red" Text="La Cedula de Identidad es requerida"></asp:RequiredFieldValidator>
-            <br />
+            <div>
+                <asp:Label ID="lblCI" runat="server" Text="CI: " CssClass="label-custom"></asp:Label>
+                <asp:TextBox ID="txtCI" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ID="rfcCI" ControlToValidate="txtCI" ForeColor="Red" Text="La Cedula de Identidad es requerida"></asp:RequiredFieldValidator>
+            </div>
 
-            <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: " CssClass="label-custom"></asp:Label>
-            <asp:TextBox ID="txtEspecialidad" runat="server"></asp:TextBox>
-            <br />
-            <br />
+            <div>
+                <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: " CssClass="label-custom"></asp:Label>
+                <asp:TextBox ID="txtEspecialidad" runat="server"></asp:TextBox>
+            </div>
+            <div>&nbsp;</div>
 
-            <asp:Button ID="btnCrearTecnico" runat="server" Text="Crear Tecnico" Width="151px" OnClick="cmdCrear" />
-            <br />
-            <br />
-            <asp:GridView ID="TablaTecnico" runat="server" OnSelectedIndexChanged="TablaTecnico_SelectedIndexChanged"></asp:GridView>
+            <div>
+                <asp:Button ID="btnCrearTecnico" runat="server" Text="Crear Tecnico" Width="151px" OnClick="cmdCrear" />
+            </div>
+            <div>&nbsp;</div>
 
+            <div>
+                <asp:GridView ID="TablaTecnico" runat="server" OnSelectedIndexChanged="TablaTecnico_SelectedIndexChanged"></asp:GridView>
+            </div>
             <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
         </main>
 
@@ -51,8 +58,13 @@
         .titulo {
             width: 100px; /* Establece un ancho fijo */
             text-align: right; /* Alineación del texto */
-            font-size:25px;
+            font-size: 25px;
         }
+        .div{
+            padding-bottom:10px;
+            padding-top:10px;
+        }
+
     </style>
 
 
