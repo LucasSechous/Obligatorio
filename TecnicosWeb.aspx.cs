@@ -41,7 +41,7 @@ namespace Obligatorio
             miTecnico.Apellido = b;
             miTecnico.CI = c;
             miTecnico.Especialidad = d;
-            lblError.Text = "Cliente creado correctamente";
+            lblError.Text = "Tecnico creado correctamente";
 
             BaseDeDatos.ListaTecnico.Add(miTecnico);
 

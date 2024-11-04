@@ -5,39 +5,55 @@
 
     <main>
 
-        <asp:Label ID="lblNombre" runat="server" Text="Nombre: "></asp:Label>
-        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
-        <br />
-        <asp:Label ID="lblApellido" runat="server" Text="Apellido: "></asp:Label>
-        <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator runat="server" ID="rfvApellido" ControlToValidate="txtApellido" ForeColor="Red" Text="El Apellido es requerido"></asp:RequiredFieldValidator>
-        <br />
-        <asp:Label ID="lblCI" runat="server" Text="CI: "></asp:Label>
-        <asp:TextBox ID="txtCI" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator runat="server" ID="rfcCI" ControlToValidate="txtCI" ForeColor="Red" Text="La Cedula de Identidad es requerida"></asp:RequiredFieldValidator>
-        <br />
-        <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: "></asp:Label>
-        <asp:TextBox ID="txtEspecialidad" runat="server"></asp:TextBox>
-        <br />
-        <asp:Button ID="btnCrearTecnico" runat="server" Text="Crear Tecnico" Width="151px" OnClick="cmdCrear" />
-        <br />
-        <asp:GridView ID="TablaTecnico" runat="server" OnSelectedIndexChanged="TablaTecnico_SelectedIndexChanged"></asp:GridView>
-        <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+        <main>
+
+            <asp:h1 ID="titulo" Class="titulo">Creacion de Tecnicos</asp:h1>
+            <br />
+
+            <asp:Label ID="lblNombre" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
+            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
+            <br />
+
+            <asp:Label ID="lblApellido" runat="server" Text="Apellido: " CssClass="label-custom"></asp:Label>
+            <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ID="rfvApellido" ControlToValidate="txtApellido" ForeColor="Red" Text="El Apellido es requerido"></asp:RequiredFieldValidator>
+            <br />
+
+            <asp:Label ID="lblCI" runat="server" Text="CI: " CssClass="label-custom"></asp:Label>
+            <asp:TextBox ID="txtCI" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ID="rfcCI" ControlToValidate="txtCI" ForeColor="Red" Text="La Cedula de Identidad es requerida"></asp:RequiredFieldValidator>
+            <br />
+
+            <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: " CssClass="label-custom"></asp:Label>
+            <asp:TextBox ID="txtEspecialidad" runat="server"></asp:TextBox>
+            <br />
+            <br />
+
+            <asp:Button ID="btnCrearTecnico" runat="server" Text="Crear Tecnico" Width="151px" OnClick="cmdCrear" />
+            <br />
+            <br />
+            <asp:GridView ID="TablaTecnico" runat="server" OnSelectedIndexChanged="TablaTecnico_SelectedIndexChanged"></asp:GridView>
+
+            <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+        </main>
 
 
     </main>
-    <%--<style>
-        main {
-            justify-content: center;
-            text-align: center;
+    <style>
+        .label-custom {
+            display: inline-block; /* Para que todos tengan el mismo tamaño */
+            width: 100px; /* Establece un ancho fijo */
+            margin-top: 20px; /* Espaciado superior */
+            text-align: right; /* Alineación del texto */
         }
 
-        #TablaTecnico {
-            justify-content: center;
-            text-align: center;
+        .titulo {
+            width: 100px; /* Establece un ancho fijo */
+            text-align: right; /* Alineación del texto */
+            font-size:25px;
         }
-    </style>--%>
+    </style>
 
 
 
