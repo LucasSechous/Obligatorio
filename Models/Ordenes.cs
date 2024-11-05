@@ -8,14 +8,14 @@ namespace Obligatorio.Models
     public class Ordenes
     {
 
-        private int NroOrden;
-        private Cliente Cliente;
-        private Tecnico Tecnico;
-        private DateTime Fecha;
-        private string DescripcionProblema;
-        private DateTime FechaCreacion;
-        private Estado Estado;
-        private string ComentariosTecnico;
+        public int NroOrden;
+        public Cliente Cliente;
+        public Tecnico Tecnico;
+        public DateTime Fecha;
+        public string DescripcionProblema;
+        public DateTime FechaCreacion;
+        public Estado Estado;
+        public string ComentariosTecnico;
 
         public int getNroOrden()
         {

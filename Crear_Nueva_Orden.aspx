@@ -19,7 +19,7 @@
             
             <%-- Hacer un dropdown --%>
             <asp:DropDownList ID="ddlTipoServicio" runat="server">
-                <asp:ListItem runat="server" Enabled="true" Text="Seleccione un Servicio" Value="-1"></asp:ListItem>
+                <asp:ListItem ID="mostradoPrimero" runat="server" Enabled="true" Text="Seleccione un Servicio" Value="-1"></asp:ListItem>
                 <asp:ListItem Value="Montaje">Montaje</asp:ListItem>
                 <asp:ListItem Value="Sistemas">Sistemas</asp:ListItem>
                 <asp:ListItem Value="Reparacion">Reparacion</asp:ListItem>
@@ -27,6 +27,25 @@
         </div>
         <div>
             <asp:Calendar runat="server" ID="calendario"></asp:Calendar>
+            <table style="width: 100%;">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <asp:Table runat="server"></asp:Table>
+            <asp:Table ID="Table1" runat="server"></asp:Table>
             &nbsp;
         </div>
     </form>

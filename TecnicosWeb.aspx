@@ -30,7 +30,13 @@
 
             <div>
                 <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: " CssClass="label-custom"></asp:Label>
-                <asp:TextBox ID="txtEspecialidad" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="ddlTipoServicio" runat="server">
+                    <asp:ListItem runat="server" Enabled="true" Text="Seleccione un Servicio" Value="-1"></asp:ListItem>
+                    <asp:ListItem Value="Montaje">Montaje</asp:ListItem>
+                    <asp:ListItem Value="Sistemas">Sistemas</asp:ListItem>
+                    <asp:ListItem Value="Reparacion">Reparacion</asp:ListItem>
+                </asp:DropDownList>
+                
             </div>
             <div>&nbsp;</div>
 
@@ -39,9 +45,20 @@
             </div>
             <div>&nbsp;</div>
 
-            <div>
+            <%--<div>
                 <asp:GridView ID="TablaTecnico" runat="server" OnSelectedIndexChanged="TablaTecnico_SelectedIndexChanged"></asp:GridView>
-            </div>
+            </div>--%>
+
+            <asp:GridView ID="TablaTecnico1" runat="server" AutoGenerateColumns="False">
+                <%-- Siempre dejar el "1" atras, no sabemos pq, pero funciona --%>
+                <Columns>
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                    <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                    <asp:BoundField DataField="CI" HeaderText="CI" SortExpression="CI" />
+                    <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" SortExpression="Especialidad" />
+                </Columns>
+            </asp:GridView>
+
             <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
         </main>
 
@@ -60,11 +77,11 @@
             text-align: right; /* Alineación del texto */
             font-size: 25px;
         }
-        .div{
-            padding-bottom:10px;
-            padding-top:10px;
-        }
 
+        .div {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
     </style>
 
 

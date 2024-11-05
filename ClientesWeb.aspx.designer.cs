@@ -177,13 +177,13 @@ namespace Obligatorio
         protected global::System.Web.UI.WebControls.GridView TablaClientes;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control TablaClientes1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView TablaClientes1;
 
         /// <summary>
         /// Control lblCreadoCorrectamente.

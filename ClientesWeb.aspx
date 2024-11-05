@@ -39,18 +39,18 @@
         <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" Width="151px" OnClick="cmdCrear" />
         <br />
         <br />
-        <asp:GridView ID="TablaClientes" runat="server"></asp:GridView>
+        <!--<asp:GridView ID="TablaClientes" runat="server"></asp:GridView>-->
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-    <Columns>
-        
-        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-        <asp:BoundField DataField="`Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-        <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-    </Columns>
-</asp:GridView>
+        <asp:GridView ID="TablaClientes1" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                <asp:BoundField DataField="CI" HeaderText="CI" SortExpression="CI" />
+                <asp:BoundField DataField="Direccion" HeaderText="Dirección" SortExpression="Direccion" />
+                <asp:BoundField DataField="Telefono" HeaderText="Teléfono" SortExpression="Telefono" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            </Columns>
+        </asp:GridView>
         <br />
         <asp:Label ID="lblCreadoCorrectamente" runat="server" Visible="false" ForeColor="Green"></asp:Label>
     </main>

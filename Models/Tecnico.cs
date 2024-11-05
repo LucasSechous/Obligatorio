@@ -7,7 +7,7 @@ namespace Obligatorio.Models
 {
     public class Tecnico : Usuario
     {
-        public string Especialidad;
+        public string Especialidad { get; set; }
 
         public Tecnico(string Nombre, string Apellido, string ci, string especialidad): base(Nombre, Apellido, ci)
         {

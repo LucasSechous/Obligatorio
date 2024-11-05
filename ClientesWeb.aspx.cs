@@ -27,8 +27,8 @@ namespace Obligatorio
         }
         private void CargarClientesEnTabla()
         {
-            TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-            TablaClientes.DataBind();
+            TablaClientes1.DataSource = BaseDeDatos.ListaClientes;
+            TablaClientes1.DataBind();
         }
 
         protected void cmdCrear(object sender, EventArgs e)
@@ -65,8 +65,8 @@ namespace Obligatorio
 
 
                 
-                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                TablaClientes.DataBind();
+                TablaClientes1.DataSource = BaseDeDatos.ListaClientes;
+                TablaClientes1.DataBind();
 
                 LimpiarCampos();
             }

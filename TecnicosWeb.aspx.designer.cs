@@ -105,13 +105,13 @@ namespace Obligatorio
         protected global::System.Web.UI.WebControls.Label lblEspecialidad;
 
         /// <summary>
-        /// Control txtEspecialidad.
+        /// Control ddlTipoServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEspecialidad;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoServicio;
 
         /// <summary>
         /// Control btnCrearTecnico.
@@ -123,13 +123,13 @@ namespace Obligatorio
         protected global::System.Web.UI.WebControls.Button btnCrearTecnico;
 
         /// <summary>
-        /// Control TablaTecnico.
+        /// Control TablaTecnico1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView TablaTecnico;
+        protected global::System.Web.UI.WebControls.GridView TablaTecnico1;
 
         /// <summary>
         /// Control lblError.

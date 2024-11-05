@@ -52,6 +52,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/ClientesWeb">Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/TecnicosWeb">Tecnicos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="Crear_Nueva_Orden">Ordenes</a></li>
                     </ul>
                 </div>
             </div>

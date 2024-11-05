@@ -10,18 +10,18 @@ namespace Obligatorio
 {
     public partial class TecnicosWeb : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 if (BaseDeDatos.ListaTecnico.Count == 0) // Solo precarga si la lista está vacía
                 {
                     BaseDeDatos.PrecargarBD();
                 }
-                TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
-                TablaTecnico.DataBind();
+                TablaTecnico1.DataSource = BaseDeDatos.ListaTecnico;
+                TablaTecnico1.DataBind();
             }
 
         }
@@ -33,7 +33,7 @@ namespace Obligatorio
             var a = txtNombre.Text;
             var b = txtApellido.Text;
             var c = txtCI.Text;
-            var d = txtEspecialidad.Text;
+            var d = ddlTipoServicio.Text;
 
             Tecnico miTecnico = new Tecnico(a, b, c, d);
 
@@ -47,13 +47,13 @@ namespace Obligatorio
 
 
 
-            TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
-            TablaTecnico.DataBind();
+            TablaTecnico1.DataSource = BaseDeDatos.ListaTecnico;
+            TablaTecnico1.DataBind();
 
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtCI.Text = "";
-            txtEspecialidad.Text = "";
+            ddlTipoServicio.AutoPostBack = true;
 
 
         }
