@@ -10,10 +10,10 @@ namespace Obligatorio.Models
 
       public string Nombre {  get; set; }
       public string Apellido { get; set; }
-      public uint CI { get; set; }
+      public string CI { get; set; }
 
 
-        public Usuario(string Nombre, string Apellido, uint ci)
+        public Usuario(string Nombre, string Apellido, string ci)
         {
             this.Nombre = Nombre;
             this.Apellido = Apellido;
@@ -30,7 +30,7 @@ namespace Obligatorio.Models
             return Apellido;
         }
 
-        public uint getCI()
+        public string getCI()
         {
             return CI;
         }
@@ -45,7 +45,7 @@ namespace Obligatorio.Models
             this.Apellido = apellido;
         }
 
-        public void setCI(uint ci)
+        public void setCI(string ci)
         {
             this.CI = ci;
         }

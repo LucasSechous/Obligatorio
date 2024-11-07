@@ -1,24 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Crear_Nueva_Orden.aspx.cs" Inherits="Obligatorio.Crear_Nueva_Orden" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrdenesWeb.aspx.cs" Inherits="Obligatorio.WebForm1" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+    <div>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+    </div>
+    <main>
         <div>
-         
 
-&nbsp;
             <asp:Label ID="lblNombreCliente" runat="server" Text="Nombre del Cliente: "></asp:Label>
             <asp:TextBox ID="txtNombreCliente" runat="server" />
         </div>
         <div>
             <asp:Label ID="lblTipoServicio" runat="server" Text="Servicio Deseado: "></asp:Label>
-            
+
             <%-- Hacer un dropdown --%>
             <asp:DropDownList ID="ddlTipoServicio" runat="server">
                 <asp:ListItem ID="mostradoPrimero" runat="server" Enabled="true" Text="Seleccione un Servicio" Value="-1"></asp:ListItem>
@@ -50,7 +46,6 @@
             <asp:Table ID="Table1" runat="server"></asp:Table>
             &nbsp;
         </div>
-        <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
-    </form>
-</body>
-</html>
+    </main>
+
+</asp:Content>
