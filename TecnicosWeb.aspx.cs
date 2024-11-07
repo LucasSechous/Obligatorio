@@ -13,9 +13,9 @@ namespace Obligatorio
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
-            TablaTecnico.DataBind();
-            TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
+            TablaTecnico1.DataSource = BaseDeDatos.ListaTecnico;
+            TablaTecnico1.DataBind();
+            TablaTecnico1.DataSource = BaseDeDatos.ListaTecnico;
 
             if (!IsPostBack)
             {
@@ -69,13 +69,11 @@ namespace Obligatorio
             //dt.Columns.Add("Tecnico");
 
 
-
-
-
         }
 
-        protected void cmdCrear(object sender, EventArgs e)
+        protected void TablaTecnico1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
     }
 }
