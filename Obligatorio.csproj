@@ -179,9 +179,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="Styles\styles.css" />
-    <Content Include="Styles\stylesCatalogo.css" />
-    <Content Include="Styles\stylesSobre.css" />
     <Content Include="TecnicosWeb.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />

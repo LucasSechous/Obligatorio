@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,14 @@ namespace Obligatorio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
+            TablaTecnico.DataBind();
+            TablaTecnico.DataSource = BaseDeDatos.ListaTecnico;
 
+        }
+
+        protected void cmdCrear(object sender, EventArgs e)
+        {
         }
     }
 }

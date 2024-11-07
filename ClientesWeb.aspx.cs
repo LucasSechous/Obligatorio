@@ -12,12 +12,12 @@ namespace Obligatorio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 TablaClientes.DataSource = BaseDeDatos.ListaClientes;
                 TablaClientes.DataBind();
                 TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                
 
             }
         }
