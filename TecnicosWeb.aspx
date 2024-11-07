@@ -6,9 +6,8 @@
     <main>
 
         <main>
-
-            <asp:h1 ID="titulo" Class="titulo">Creacion de Tecnicos</asp:h1>
-            <br />
+            <div><h1 ID="titulo" runat="server" Class="titulo">Creacion de Tecnicos</h1></div>
+            
             <div>
                 <asp:Label ID="lblNombre" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
                 <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
@@ -73,7 +72,7 @@
         }
 
         .titulo {
-            width: 100px; /* Establece un ancho fijo */
+            width: 238px; /* Establece un ancho fijo */
             text-align: right; /* Alineación del texto */
             font-size: 25px;
         }

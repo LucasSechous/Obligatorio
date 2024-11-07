@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <h1 class="titulo">Creacion de Clientes</h1>
+        <asp:h1 class="titulo">Creacion de Clientes</asp:h1>
         <br />
         
         <asp:Label ID="Label" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
