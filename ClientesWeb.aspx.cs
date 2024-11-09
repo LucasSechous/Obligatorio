@@ -1,10 +1,12 @@
 ﻿using Obligatorio.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Obligatorio
 {
@@ -16,10 +18,12 @@ namespace Obligatorio
 
             if (!IsPostBack)
             {
-                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                TablaClientes.DataBind();
-                TablaClientes.DataSource = BaseDeDatos.ListaClientes;
-                
+                if (BaseDeDatos.ListaClientes.Count == 0) // Solo precarga si la lista está vacía
+                {
+                    BaseDeDatos.PrecargarBD();
+                }
+
+                CargarClientesEnTabla();
 
             }
         }
@@ -29,12 +33,12 @@ namespace Obligatorio
             TablaClientes1.DataBind();
         }
 
-        protected void cmdCrear(object sender, EventArgs e)
+        protected void CmdCrear(object sender, EventArgs e)
         {
 
             if (string.IsNullOrEmpty(txtEmail.Text) && string.IsNullOrEmpty(txtTelefono.Text))
             {
-                
+
                 lblError.Text = "Debes agregar un metodo de contacto";
                 lblError.Visible = true;
 
@@ -62,14 +66,13 @@ namespace Obligatorio
                 BaseDeDatos.ListaClientes.Add(miCliente);
 
 
-                
-                TablaClientes1.DataSource = BaseDeDatos.ListaClientes;
-                TablaClientes1.DataBind();
+
+                CargarClientesEnTabla();
 
                 LimpiarCampos();
             }
 
-            
+
 
 
         }
@@ -81,6 +84,94 @@ namespace Obligatorio
             txtDireccion.Text = "";
             txtTelefono.Text = "";
             txtEmail.Text = "";
+        }
+
+        protected void TeBorroALaMierda(object sender, GridViewDeleteEventArgs e)
+        {
+            int index = e.RowIndex;
+
+            if (index >= 0 && index < BaseDeDatos.ListaClientes.Count)
+            {
+                BaseDeDatos.ListaClientes.RemoveAt(index);
+                lblError.Visible = true;
+                lblError.Text = "Cliente eliminado correctamente";
+                BtnActualizar.Visible = false;
+            }
+            else
+            {
+                lblError.Text = "OUT del rango.";
+                return;
+            }
+
+            TablaClientes1.EditIndex = -1;
+            CargarClientesEnTabla();
+
+        }
+
+        protected void TablaClientes1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                BtnActualizar.Visible = true;
+                lblError.Visible = false;
+
+                if (index >= 0 && index < BaseDeDatos.ListaClientes.Count)
+                {
+
+                    Cliente cliente = BaseDeDatos.ListaClientes[index];
+
+                    txtNombre.Text = cliente.Nombre;
+                    txtApellido.Text = cliente.Apellido;
+                    txtCI.Text = cliente.CI;
+                    txtDireccion.Text = cliente.Direccion;
+                    txtTelefono.Text = cliente.Telefono;
+                    txtEmail.Text = cliente.Email;
+
+
+                    rfvNombre.Enabled = false;
+                    rfvApellido.Enabled = false;
+                    rfcCI.Enabled = false;
+
+                    // Guarda el índice del técnico en una variable de sesión para usarlo al actualizar
+                    Session["ClienteIndex"] = index;
+                }
+            }
+        }
+
+        protected void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            // Asegúrate de que existe un índice almacenado en sesión
+            if (Session["ClienteIndex"] != null)
+            {
+                int index = (int)Session["ClienteIndex"];
+
+                Cliente cliente = BaseDeDatos.ListaClientes[index];
+
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                cliente.CI = txtCI.Text;
+                cliente.Direccion = txtDireccion.Text;
+                cliente.Telefono = txtTelefono.Text;
+                cliente.Email = txtEmail.Text;
+
+                LimpiarCampos();
+
+                lblError.Visible = true;
+                lblError.Text = "Cliente actualizado correctamente";
+
+
+                rfvNombre.Enabled = true;
+                rfvApellido.Enabled = true;
+                rfcCI.Enabled = true;
+
+                CargarClientesEnTabla();
+
+                Session.Remove("ClienteIndex");
+                BtnActualizar.Visible = false;
+            }
         }
     }
 }

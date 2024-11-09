@@ -12,8 +12,19 @@ namespace Obligatorio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BaseDeDatos.PrecargarBD();
+            if (!IsPostBack)
+            {
+                if (BaseDeDatos.ListaClientes.Count == 0) // Solo precarga si la lista está vacía
+                {
+                    BaseDeDatos.PrecargarBD();
+                }
 
+                if (BaseDeDatos.ListaTecnico.Count == 0)
+                {
+                    BaseDeDatos.PrecargarBD();
+                }
+
+            }
         }
     }
 }

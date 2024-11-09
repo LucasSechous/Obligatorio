@@ -1,11 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientesWeb.aspx.cs" Inherits="Obligatorio.ClientesWeb" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientesWeb.aspx.cs" Inherits="Obligatorio.ClientesWeb" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <asp:h1 class="titulo">Creacion de Clientes</asp:h1>
-        <br />
+        <div>
+            <h1 class="titulo">Creacion de Clientes</h1>
+        </div>
         
+        <br />
+
         <asp:Label ID="Label" runat="server" Text="Nombre: " CssClass="label-custom"></asp:Label>
         <asp:TextBox ID="txtNombre" runat="server" CssClass="text-box"></asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ID="rfvNombre" ControlToValidate="txtNombre" ForeColor="Red" Text="El nombre es requerido"></asp:RequiredFieldValidator>
@@ -36,12 +39,11 @@
         <asp:Label ID="lblError" runat="server" Visible="false" ForeColor="Red"></asp:Label>
         <br />
 
-        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" Width="151px" OnClick="cmdCrear" />
+        <asp:Button ID="btnCrearUsuario" runat="server" Text="Crear Usuario" Width="151px" OnClick="CmdCrear" />
         <br />
         <br />
-        <!--<asp:GridView ID="TablaClientes" runat="server"></asp:GridView>-->
 
-        <asp:GridView ID="TablaClientes1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="TablaClientes1" runat="server" AutoGenerateColumns="False" OnRowDeleting="TeBorroALaMierda" OnRowCommand="TablaClientes1_RowCommand">
             <Columns>
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
@@ -49,9 +51,18 @@
                 <asp:BoundField DataField="Direccion" HeaderText="Dirección" SortExpression="Direccion" />
                 <asp:BoundField DataField="Telefono" HeaderText="Teléfono" SortExpression="Telefono" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnEditar" runat="server" CommandName="Editar" CommandArgument="<%# Container.DataItemIndex %>" Text="Editar" CausesValidation="false" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ButtonType="Button" ShowDeleteButton="true" DeleteText="Eliminar" />
             </Columns>
         </asp:GridView>
         <br />
+        <div>
+            <asp:Button ID="BtnActualizar" runat="server" Text="Actualizar" Visible="false" OnClick="BtnActualizar_Click" />
+        </div>
         <asp:Label ID="lblCreadoCorrectamente" runat="server" Visible="false" ForeColor="Green"></asp:Label>
     </main>
 
@@ -69,7 +80,7 @@
         }
 
         .titulo {
-            width: 100px; /* Establece un ancho fijo */
+            width: 259px; /* Establece un ancho fijo */
             text-align: right; /* Alineación del texto */
             font-size: 25px;
         }

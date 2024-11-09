@@ -229,6 +229,7 @@
     </Compile>
     <Compile Include="Models\BaseDeDatos.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Enum_Estado.cs" />
     <Compile Include="Models\Enum_Tecnicos.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Ordenes.cs" />
