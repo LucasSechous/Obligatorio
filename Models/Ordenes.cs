@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 
 namespace Obligatorio.Models
@@ -8,23 +9,45 @@ namespace Obligatorio.Models
     public class Ordenes
     {
 
-        public int NroOrden;
-        public Cliente Cliente;
-        public Tecnico Tecnico;
-        public DateTime Fecha;
-        public string DescripcionProblema;
-        public DateTime FechaCreacion;
-        public Estado Estado;
-        public string ComentariosTecnico;
+        public int NroOrden { get; set; }
+        public Cliente Cliente { get; set; }
+        public Tecnico Tecnico { get; set; }
+        public DateTime Fecha { get; set; }
+        public string DescripcionProblema { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public Estado Estado { get; set; }
+        public string ComentariosTecnico { get; set; }
+
+        public List<string> ListaComentarios = new List<string>();
+
+        public Ordenes(int nroOrden, Cliente cliente, Tecnico tecnico, DateTime fecha, string descripcionProblema, DateTime fechaCreacion, Estado estado, List<string> listacomentarios)
+        {
+            this.NroOrden = nroOrden;
+            this.Cliente = cliente;
+            this.Tecnico = tecnico;
+            this.Fecha = fecha;
+            this.DescripcionProblema = descripcionProblema;
+            this.FechaCreacion = fechaCreacion;
+            this.Estado = estado;
+            //this.ComentariosTecnico = comentariosTecnico;
+            this.ListaComentarios = listacomentarios;
+
+        }
 
         public int getNroOrden()
         {
+
+            for (int i = 0; i < Convert.ToInt32(BaseDeDatos.ListaOrdenes.Count); i++)
+            {
+                NroOrden = i;
+            }
+
             return NroOrden;
         }
 
-        public void setNroOrden(int NroOrden)
+        public void setNroOrden(int nroOrden)
         {
-            this.NroOrden = NroOrden;
+            this.NroOrden = nroOrden;
         }
 
         public Cliente getCliente()
@@ -32,9 +55,9 @@ namespace Obligatorio.Models
             return Cliente;
         }
 
-        public void setCliente(Cliente Cliente)
+        public void setCliente(Cliente cliente)
         {
-            this.Cliente = Cliente;
+            this.Cliente = cliente;
         }
 
         public Tecnico getTecnico()
@@ -42,9 +65,9 @@ namespace Obligatorio.Models
             return Tecnico;
         }
 
-        public void setTecnico(Tecnico Tecnico)
+        public void setTecnico(Tecnico tecnico)
         {
-            this.Tecnico = Tecnico;
+            this.Tecnico = tecnico;
         }
 
         public string getDescripcionProblema()
@@ -52,9 +75,9 @@ namespace Obligatorio.Models
             return DescripcionProblema;
         }
 
-        public void setDescripcionProblema(string DescripcionProblema)
+        public void setDescripcionProblema(string descripcionProblema)
         {
-            this.DescripcionProblema = DescripcionProblema;
+            this.DescripcionProblema = descripcionProblema;
         }
 
         public DateTime getFechaCreacion()
@@ -72,9 +95,9 @@ namespace Obligatorio.Models
             return Estado;
         }
 
-        public void setEstado(Estado Estado)
+        public void setEstado(Estado estado)
         {
-            this.Estado = Estado;
+            this.Estado = estado;
         }
 
         public string getComentariosTecnico()
@@ -82,18 +105,10 @@ namespace Obligatorio.Models
             return ComentariosTecnico;
         }
 
-        public void setComentariosTecnico(string ComentariosTecnico)
+        public void setComentariosTecnico(string comentariosTecnico)
         {
-            this.ComentariosTecnico= ComentariosTecnico;
+            this.ComentariosTecnico = comentariosTecnico;
         }
-
-
-
-
-
-
-
-
 
     }
 }

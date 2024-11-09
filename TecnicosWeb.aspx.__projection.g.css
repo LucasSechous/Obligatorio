@@ -1,0 +1,22 @@
+
+/* BEGIN EXTERNAL SOURCE */
+
+        .label-custom {
+            display: inline-block; /* Para que todos tengan el mismo tamaño */
+            width: 100px; /* Establece un ancho fijo */
+            margin-top: 20px; /* Espaciado superior */
+            text-align: right; /* Alineación del texto */
+        }
+
+        .titulo {
+            width: 238px; /* Establece un ancho fijo */
+            text-align: right; /* Alineación del texto */
+            font-size: 25px;
+        }
+
+        .div {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+    
+/* END EXTERNAL SOURCE */

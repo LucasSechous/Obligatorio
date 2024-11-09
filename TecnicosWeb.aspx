@@ -32,7 +32,6 @@
                 <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad: " CssClass="label-custom"></asp:Label>
                 <asp:DropDownList ID="ddlTipoServicio" runat="server">
                     <asp:ListItem runat="server" Enabled="true" Text="Seleccione un Servicio" Value=""></asp:ListItem>
-                    <asp:ListItem Value="Montaje">Montaje</asp:ListItem>
                     <asp:ListItem Value="Sistemas">Sistemas</asp:ListItem>
                     <asp:ListItem Value="Reparacion">Reparacion</asp:ListItem>
                 </asp:DropDownList>

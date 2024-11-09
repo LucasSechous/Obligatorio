@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obligatorio.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,33 @@ namespace Obligatorio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (BaseDeDatos.ListaTecnico.Count == 0 && BaseDeDatos.ListaTecnico.Count == 0)
+                {
+                    BaseDeDatos.PrecargarBD();
+
+
+                    DDClientes.DataSource = BaseDeDatos.ListaClientes;
+                    DDClientes.DataTextField = "Nombre";
+                    DDClientes.DataBind();
+
+                    DDTecnicos.DataSource = BaseDeDatos.ListaTecnico;
+                    DDTecnicos.DataTextField = "Nombre";
+                    DDTecnicos.DataBind();
+
+                    ListaComentarios.DataSource = Ordenes
+                    ListaComentarios.DataBind();
+                }
+
+            }
+        }
+
+        private void CmdCrear(object sender, EventArgs e)
+        {
 
         }
+
+       
     }
 }
