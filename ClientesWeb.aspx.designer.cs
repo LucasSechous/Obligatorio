@@ -96,6 +96,15 @@ namespace Obligatorio
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfcCI;
 
         /// <summary>
+        /// Control cvCedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvCedula;
+
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>
@@ -159,13 +168,13 @@ namespace Obligatorio
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// Control btnCrearUsuario.
+        /// Control btnCrearCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrearUsuario;
+        protected global::System.Web.UI.WebControls.Button btnCrearCliente;
 
         /// <summary>
         /// Control TablaClientes1.
