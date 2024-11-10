@@ -27,8 +27,8 @@ namespace Obligatorio
                     DDTecnicos.DataTextField = "Nombre";
                     DDTecnicos.DataBind();
 
-                    ListaComentarios.DataSource = Ordenes
-                    ListaComentarios.DataBind();
+                    //ListaComentarios.DataSource = Ordenes
+                    //ListaComentarios.DataBind();
                 }
 
             }
